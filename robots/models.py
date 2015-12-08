@@ -1,8 +1,8 @@
-from django.db import models
 from django.contrib.sites.models import Site
+from django.db import models
 from django.utils.encoding import python_2_unicode_compatible
-from django.utils.translation import ugettext_lazy as _
 from django.utils.text import get_text_list
+from django.utils.translation import ugettext_lazy as _
 from six import u
 
 
@@ -23,6 +23,7 @@ class Url(models.Model):
     class Meta:
         verbose_name = _('url')
         verbose_name_plural = _('url')
+        app_label = _('Url')
 
     def __str__(self):
         return u("%s") % self.pattern
@@ -82,6 +83,7 @@ class Rule(models.Model):
     class Meta:
         verbose_name = _('rule')
         verbose_name_plural = _('rules')
+        app_label = _('Rule')
 
     def __str__(self):
         return u("%s") % self.robot
