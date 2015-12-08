@@ -16,6 +16,7 @@ class RuleList(ListView):
     model = Rule
     context_object_name = 'rules'
     cache_timeout = settings.CACHE_TIMEOUT
+    template_name = 'robots/rule_list.html'
 
     def get_current_site(self, request):
         return Site.objects.get_current()
