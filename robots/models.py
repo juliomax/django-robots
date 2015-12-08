@@ -20,11 +20,6 @@ class Url(models.Model):
                                " (*) as a wildcard and a dollar sign ($) to "
                                "match the end of the URL, e.g., '/*.jpg$'."))
 
-    class Meta:
-        verbose_name = _('url')
-        verbose_name_plural = _('url')
-        app_label = _('Url')
-
     def __str__(self):
         return u("%s") % self.pattern
 
@@ -79,11 +74,6 @@ class Rule(models.Model):
                                       "successive crawl accesses and "
                                       "decrease the maximum crawl rate to "
                                       "your web server."))
-
-    class Meta:
-        verbose_name = _('rule')
-        verbose_name_plural = _('rules')
-        app_label = _('Rule')
 
     def __str__(self):
         return u("%s") % self.robot
